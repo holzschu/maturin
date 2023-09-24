@@ -9,6 +9,7 @@ use std::path::{Path, PathBuf};
 pub fn is_cross_compiling(target: &Target) -> Result<bool> {
     let target_triple = target.target_triple();
     let host = target.host_triple();
+
     if target_triple == host {
         // Not cross-compiling
         return Ok(false);
